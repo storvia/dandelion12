@@ -1,0 +1,298 @@
+/* 1. Reset & basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. CSS Variables */
+:root {
+    --bg-color: #121212;
+    --sidebar-color: #1e1e1e;
+    --text-color: #fff;
+    --accent-color: #1db954;
+    --card-bg: #1e1e1e;
+    --hover-bg: #333;
+    --button-bg: #1db954;
+    --button-hover: #1ed760;
+}
+
+/* 3. Global Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 4. Sidebar */
+#sidebar {
+    width: 220px;
+    background-color: var(--sidebar-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    min-height: 100vh;
+}
+
+#sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#sidebar nav ul {
+    list-style: none;
+}
+
+#sidebar nav ul li {
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+#sidebar nav ul li:hover {
+    background-color: var(--hover-bg);
+}
+
+#sidebar nav ul li.active {
+    background-color: var(--accent-color);
+}
+
+/* 5. Main Content & Dashboard */
+#main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--bg-color);
+    transition: margin-left 0.3s ease;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* 6. Card Styles (Albums, Playlists, Songs) */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card .card-info {
+    padding: 10px;
+}
+
+.card .card-info h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.card .card-info p {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+}
+
+.card:hover {
+    transform: rotateY(5deg) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+/* Remove button inside cards */
+.card-info button {
+    margin-top: 5px;
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-info button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Artist Header */
+.artist-header,
+.album-page .artist-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.artist-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.artist-header h2 {
+    font-size: 2rem;
+}
+
+.artist-header p {
+    color: #b3b3b3;
+}
+
+/* 7. Search Page */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+/* 8. Theme Toggle */
+.theme-toggle {
+    margin-top: auto;
+    text-align: center;
+}
+
+.theme-toggle button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.theme-toggle button:hover {
+    background-color: var(--button-hover);
+}
+
+/* 9. Music Player Bar */
+#player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--sidebar-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid #333;
+    z-index: 1000;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.player-controls input[type="range"] {
+    cursor: pointer;
+}
+
+/* 10. Responsive: Medium & Small Screens */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 60px;
+    }
+
+    #sidebar .logo {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #sidebar nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #main-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        width: 50px;
+        padding: 10px 5px;
+    }
+
+    #main-content {
+        padding: 15px;
+    }
+
+    .card-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .card-info p {
+        font-size: 0.75rem;
+    }
+
+    #player-bar {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .player-info img {
+        width: 40px;
+        height: 40px;
+    }
+}
