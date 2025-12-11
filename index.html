@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Qur'an App</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Main App Container -->
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="logo">🎵 MyMusic</div>
+            <nav>
+                <ul>
+                    <li class="nav-item active" data-page="home">Home</li>
+                    <li class="nav-item" data-page="search">Search</li>
+                    <li class="nav-item" data-page="library">Your Library</li>
+                    <li class="nav-item" data-page="playlists">Playlists</li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-btn">🌙</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <h1>Welcome to My Music App</h1>
+            <!-- Dynamic content will be injected here by main.js -->
+        </main>
+
+        <!-- Fixed Player Bar (inside #app so layout flows correctly) -->
+        <div id="player-bar">
+            <div class="player-info">
+                <img id="player-cover" src="assets/placeholder-album.png" alt="Album Cover" />
+                <div>
+                    <h4 id="player-title">Song Title</h4>
+                    <p id="player-artist">Artist</p>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button id="prev-btn">⏮️</button>
+                <button id="play-btn">▶️</button>
+                <button id="next-btn">⏭️</button>
+                <input type="range" id="progress" value="0" min="0" max="100" />
+                <input type="range" id="volume" value="80" min="0" max="100" />
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
