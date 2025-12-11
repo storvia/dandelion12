@@ -1,0 +1,78 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "title": "Dreams of Tomorrow",
+      "artistId": 1,
+      "albumId": 1,
+      "cover": "assets/splash-song1.png",
+      "audio": "assets/placeholder-audio.mp3",
+      "duration": "3:45"
+    },
+    {
+      "id": 2,
+      "title": "Sunrise Journey",
+      "artistId": 1,
+      "albumId": 1,
+      "cover": "assets/splash-song2.png",
+      "audio": "assets/placeholder-audio.mp3",
+      "duration": "4:12"
+    },
+    {
+      "id": 3,
+      "title": "Moonlight Serenade",
+      "artistId": 2,
+      "albumId": 2,
+      "cover": "assets/splash-song3.png",
+      "audio": "assets/placeholder-audio.mp3",
+      "duration": "3:55"
+    },
+    {
+      "id": 4,
+      "title": "City Lights",
+      "artistId": 2,
+      "albumId": 2,
+      "cover": "assets/splash-song4.png",
+      "audio": "assets/placeholder-audio.mp3",
+      "duration": "4:05"
+    }
+  ],
+  "artists": [
+    {
+      "id": 1,
+      "name": "Echo Sky",
+      "photo": "assets/splash-artist1.png"
+    },
+    {
+      "id": 2,
+      "name": "Luna Wave",
+      "photo": "assets/splash-artist2.png"
+    }
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "title": "Future Beats",
+      "cover": "assets/splash-album1.png"
+    },
+    {
+      "id": 2,
+      "title": "Night Vibes",
+      "cover": "assets/splash-album2.png"
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "title": "Chill Vibes",
+      "cover": "assets/splash-playlist1.png",
+      "songIds": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "title": "Evening Mood",
+      "cover": "assets/splash-playlist2.png",
+      "songIds": [3, 4]
+    }
+  ]
+}
